@@ -3,13 +3,14 @@
 }
 
 body{
-
+	background-color: red;
+	text-align: center;
+	background-image: url(images/mountain.jpg);
+	background-size: cover;
 }
 
 #inventoryItem{
-	height: 700px;
-	width: 1400px; 
-	margin-left: 250px;
+	width: 100px; 
 	border: solid black 10px;
 }
 
