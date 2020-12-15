@@ -3,24 +3,40 @@
 }
 
 body{
-	background-color: red;
+	background-color: #F0F8FF;
 	text-align: center;
 	background-image: url(images/mountain.jpg);
 	background-size: cover;
 }
 
-#inventoryItem{
+#game-container{
+	margin-top: 50px;
+	width: 900px;
+	height: 300px;
+	/*border: solid black 4px;*/
+}
+
+h1{
+	font-size: 60px;
+}
+
+#description{
+	font-size: 20px;
+}
+
+/*#inventoryItem{
 	width: 100px; 
 	border: solid black 10px;
 }
+*/
 
 button{
 	margin-top: 20px;
 	border: solid black 2px;
 	border-radius: 6px;
 	font-size: 20px;
-	width: 100px;
+	width: 200px;
 	height: 50px;
-	color: white;
-	background-color: #66ff99;
+	color: black;
+	background-color: #F0F8FF;
 }
