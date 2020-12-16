@@ -11,6 +11,7 @@ var inventory = {
 	magic: false,
 	coins: 10
 };
+
 console.log(inventory);
 
 // inventory.weapon = {
@@ -27,6 +28,7 @@ button3.style.display = "none";
 
 button1.onclick = begin;
 
+
 function begin(){
 	document.body.style.backgroundImage = "url('images/mountain.jpg')";
 	document.body.style.backgroundSize = "cover";
@@ -35,7 +37,7 @@ function begin(){
 	button1.onclick = left;
 	button2.style.display = "";
 	button2.innerText = "Volg het pad";
-	button2.onclick = "";
+	button2.onclick = path;
 	button3.style.display = "";
 	button3.innerText = "Rechts";
 	button3.onclick = right;
@@ -43,6 +45,7 @@ function begin(){
 
 function left(){
 	// document.body.style.backgroundImage = "url('images/')"
+	document.body.style.backgroundImage = "url('images/mist1.jpg')";
 	description.innerText = "Je loopt een stuk naar links en het word enorm mistig. Je kan niks meer zien en je moet terug lopen.";
 	button1.innerText = "Back";
 	button1.onclick = begin;
@@ -51,7 +54,8 @@ function left(){
 }
 
 function right(){
-	description.innerText = "Je loopt naar rechts en kan daar niet verder. Er zijn enorme bergen waar je niet overheen kan. Je moet terug lopen.";
+	document.body.style.backgroundImage = "url('images/cliff.jpg')";
+	description.innerText = "Je loopt naar rechts richting de bergen. Je komt bij een cliff aan. Je kan hier niet verder. Je moet terug lopen.";
 	button1.innerText = "Back";
 	button1.onclick = begin;
 	button2.style.display = "none";
@@ -59,5 +63,6 @@ function right(){
 }
 
 function path(){
-	description.innerText = "Je volgt het pad en komt aan bij een dorpje."
+	document.body.style.backgroundImage = "url('images/village.jpg')";
+	description.innerText = "Je volgt het pad en komt aan bij een dorpje.";
 }
