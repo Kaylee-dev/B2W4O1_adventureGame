@@ -44,7 +44,6 @@ function begin(){
 }
 
 function left(){
-	// document.body.style.backgroundImage = "url('images/')"
 	document.body.style.backgroundImage = "url('images/mist1.jpg')";
 	description.innerText = "Je loopt een stuk naar links en het word enorm mistig. Je kan niks meer zien en je moet terug lopen.";
 	button1.innerText = "Back";
@@ -64,5 +63,22 @@ function right(){
 
 function path(){
 	document.body.style.backgroundImage = "url('images/village.jpg')";
-	description.innerText = "Je volgt het pad en komt aan bij een dorpje.";
+	description.innerText = "Je volgt het pad en komt aan bij een dorpje. Er zijn 3 locaties waar je naar toe kan. Waar wil je heen?";
+	button1.innerText = "De wapen handelaar";
+	button1.onclick = weapons;
+	button2.innerText = "De tovenaar";
+	button2.onclick = wizard;
+	button2.style.display = "";
+	button3.innerText = "De bar";
+	button3.onclick = bar;
+	button3.style.display = "";
+}
+
+function weapons(){
+	document.body.style.backgroundImage = "url('images/table.jpg')";
+	description.innerText = "Je bent bij de wapenhandelaar, welk wapen wil je kopen?";
+	button1.innerText = "zwaard";
+	button1.onclick = weapons;
+
+
 }
