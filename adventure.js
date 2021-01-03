@@ -48,7 +48,9 @@ function gameOver(){
 	description.style.display = "none";
 	inventoryItem.style.display = "none";
 	document.body.style.backgroundImage = "url('images/gameOver.jpg')";
+	button1.style.display = "none";
 	button2.style.display = "none";
+	button3.style.display = "none";
 
 }
 
@@ -153,16 +155,16 @@ function monster(){
 	if (inventory.sword == true) {
 		button1.onclick = defeatMonster;
 	}
-	else if (inventory.sword == false) {
-		alert("Je hebt geen zwaard.");
+	else{
+		button1.onclick = false;
 	}
 
 	button2.innerText = "Pak bijl";
 	if (inventory.axe == true) {
 		button2.onclick = defeatMonster;
 	}
-	else if (inventory.axe == false) {
-		alert("Je hebt geen bijl.");
+	else{
+		button2.onclick = false;
 	}
 		
 	button3.innerText = "Ren weg";
@@ -170,6 +172,14 @@ function monster(){
 
 function defeatMonster(){
 	alert("Je verslaat het monster.");
+}
+
+function end2(){
+	description.innerText = "Je loopt rechtdoor maar na een tijdje wandelen zie je niks meer. Je let niet op en valt in een put. Je kan er niet meer uitkomen. "
+	button1.innerText = "Game Over";
+	button1.onclick = gameOver;
+	button2.style.display = "none";
+	button3.style.display = "none";
 }
 
 function displayButtons(){
