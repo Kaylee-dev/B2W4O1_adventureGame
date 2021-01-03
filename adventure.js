@@ -27,6 +27,7 @@ button1.onclick = begin;
 function begin(){
 
 	title.innerText = "Wake-Up";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/mountain.jpg')";
 	document.body.style.backgroundSize = "cover";
 	description.innerText = "Je word wakker op een groot veld in de sneeuw. Je kan 3 kanten op gaan, welke kies je?";
@@ -52,6 +53,7 @@ function gameOver(){
 
 function left(){
 	title.innerText = "Mist";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/mist1.jpg')";
 	description.innerText = "Je loopt een stuk naar links en het word enorm mistig. Je kan niks meer zien en je moet terug lopen.";
 	button1.innerText = "Terug";
@@ -62,6 +64,7 @@ function left(){
 
 function right(){
 	title.innerText = "Cliff";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/cliff.jpg')";
 	description.innerText = "Je loopt naar rechts richting de bergen. Je komt bij een cliff aan. Je kan hier niet verder. Je moet terug lopen.";
 	button1.innerText = "Terug";
@@ -72,6 +75,7 @@ function right(){
 
 function path(){
 	title.innerText = "Village";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/village.jpg')";
 	description.innerText = "Je bent bij een dorpje. Er zijn 3 locaties waar je naar toe kan. Waar wil je heen?";
 	button1.innerText = "Wapen handelaar";
@@ -86,19 +90,34 @@ function path(){
 
 function weapons(){
 	title.innerText = "Weapons";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/table.jpg')";
 	description.innerText = "Je bent bij de wapenhandelaar, welk wapen wil je kopen?";
 	title.style.color = "white";
 	description.style.color = "white";
 	button1.innerText = "Zwaard";
-	button1.onclick = sword;
-	button2.innerText = "Bijl";
-	button2.onclick = axe;
-	button3.style.display = "none";
+	if (inventory.coins >= 10) {
+		button1.onclick = sword;
+	}
+	else{
+		button1.onclick = false;
+		button1.style.backgroundColor = "red";
+	}
+	
+	if (inventory.coins >= 10) {
+		button2.onclick = axe;
+	}
+	else{
+		button2.onclick = false;
+		button2.style.backgroundColor = "red";
+	}
+	button3.innerText = "Verder";
+	button3.onclick = nothing;
 }
 
 function sword(){
 	title.innerText = "Sword";
+	console.log(title);
 	description.innerText = "Je neemt het zwaard mee";
 	inventory.sword = true;
 	inventory.coins = 0;
@@ -110,6 +129,7 @@ function sword(){
 
 function axe(){
 	title.innerText = "Axe";
+	console.log(title);
 	description.innerText = "Je neemt de bijl mee.";
 	inventory.axe = true;
 	inventory.coins = 0;
@@ -121,6 +141,7 @@ function axe(){
 
 function wizard(){
 	title.innerText = "Wizard";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/potions.jpg')";
 	description.innerText = "Je bent bij de tovenaar, welk drankje wil je kopen?";
 	button1.innerText = "Rood drankje";
@@ -134,6 +155,7 @@ function wizard(){
 
 function red(){
 	title.innerText = "Red Potion";
+	console.log(title);
 	description.innerText = "Je koopt het rode drankje.";
 	inventory.magic = true;
 	inventory.coins = 0;
@@ -146,6 +168,7 @@ function red(){
 
 function blue(){
 	title.innerText = "Blue Potion";
+	console.log(title);
 	description.innerText = "Je koopt het blauwe drankje.";
 	inventory.magic = true;
 	inventory.coins = 0;
@@ -156,7 +179,9 @@ function blue(){
 }
 
 function nothing(){
+	document.body.style.backgroundImage = "url('images/village.jpg')";
 	title.innerText = "Nothing";
+	console.log(title);
 	description.innerText = "Je koopt niks.";
 	button1.innerText = "Verder";
 	button1.onclick = path2;
@@ -166,6 +191,7 @@ function nothing(){
 
 function bar(){
 	title.innerText = "Bar";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/bar.jpg')";
 	description.innerText = "Je bent in de bar, het is hier erg gezellig. Je blijft de hele nacht zitten om drankjes te drinken. Na een tijdje denk je een verkeerd drankje op te hebben. Je word ineens erg ziek en je haalt het einde van de nacht niet.";
 	button1.style.display = "none";
@@ -177,6 +203,7 @@ function bar(){
 }
 function path2(){
 	title.innerText = "Where?";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/path2.jpg')";
 	title.style.color = "black";
 	description.style.color = "black";
@@ -192,6 +219,7 @@ function path2(){
 
 function monster(){
 	title.innerText = "Monster";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/monster.jpg')";
 	description.innerText = "Je loopt naar links en er staat een monster op het pad. Wat doe je?";
 
@@ -220,6 +248,7 @@ function monster(){
 
 function run(){
 	title.innerText = "Run";
+	console.log(title);
 	description.innerText = "Je probeert weg te rennen maar hij haalt je in. Je probeert hem nog te vechten maar dat lukt helaas niet.";
 	button1.innerText = "Game Over";
 	button1.onclick = gameOver;
@@ -230,6 +259,7 @@ function run(){
 
 function defeatMonster(){
 	title.innerText = "Victory";
+	console.log(title);
 	inventory.coins += 10;
 	description.innerText = "Je verslaat het monster";
 	button1.innerText = "Verder";
@@ -240,6 +270,7 @@ function defeatMonster(){
 
 function ghost(){
 	title.innerText = "Ghost";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/ghost.jpg')";
 	description.innerText = "Je loopt naar rechts en ziet een spook. Hij wilt je aanvallen, wat doe je?";
 	button1.innerText = "Drink potion";
@@ -258,6 +289,7 @@ function ghost(){
 
 function ghostSword(){
 	title.innerText = "Defeat";
+	console.log(title);
 	description.innerText = "Je pakt je zwaard en probeert hem aan te vallen. Het lukt niet om hem te verslaan met een zwaard. Had je nou maar een potion gehad.";
 	button1.innerText = "Game Over";
 	button1.onclick = gameOver;
@@ -267,6 +299,7 @@ function ghostSword(){
 
 function ghostPotion(){
 	title.innerText = "Victory";
+	console.log(title);
 	inventory.coins += 10;
 	inventory.magic = false;
 	description.innerText = "Je drinkt de potion en ineens kan je vuur spugen. De geest is bang van je en vliegt weg. Je kan verder lopen.";
@@ -278,6 +311,7 @@ function ghostPotion(){
 
 function end2(){
 	title.innerText = "Fall";
+	console.log(title);
 	description.innerText = "Je loopt rechtdoor maar na een tijdje wandelen zie je niks meer. Je let niet op en valt in een put. Je kan er niet meer uitkomen. ";
 	button1.innerText = "Game Over";
 	button1.onclick = gameOver;
@@ -287,6 +321,7 @@ function end2(){
 
 function path3(){
 	title.innerText = "Follow Your Path";
+	console.log(title);
 	displayButtons();
 	document.body.style.backgroundImage = "url('images/darkForrest.jpg')";
 	title.style.color = "white";
@@ -305,6 +340,7 @@ function path3(){
 
 function theEnd1(){
 	title.innerText = "Red Dragon ";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/dragonRed2.jpg')";
 	description.innerText = "Je volgt pad 1 en komt aan op een groot open veld. je kijkt om je heen en ziet een grote rode draak aan komen vliegen. Hij komt op je af en wilt je aanvallen. Wat doe je?";
 	button1.innerText = "Pak zwaard";
@@ -329,6 +365,7 @@ function theEnd1(){
 
 function fightSword(){
 	title.innerText = "Victory";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/dragonRed2.jpg')";
 	description.innerText = "Je pakt je zwaard en rent op hem af, hij spuugt vuur maar je ontwijkt hem. Je springt op zijn rug en verslaat hem met je zwaard. Je hebt gewonnen van de draak. Er komen mensen vanuit het dorp aan rennen. Ze bedanken je voor het verslaan van de draak. The End."
 	button1.innerText = "Verder";
@@ -339,6 +376,7 @@ function fightSword(){
 
 function fightAxe(){
 	title.innerText = "Victory";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/dragonRed2.jpg')";
 	description.innerText = "Je pakt je bijl en rent op hem af, hij spuugt vuur maar je ontwijkt hem. Je springt op zijn rug en verslaat hem met je zwaard. Je hebt gewonnen van de draak. Er komen mensen vanuit het dorp aan rennen. Ze bedanken je voor het verslaan van de draak. The End."
 	button1.innerText = "Verder";
@@ -349,6 +387,7 @@ function fightAxe(){
 
 function fightHand(){
 	title.innerText = "Defeat";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/dragonRed2.jpg')";
 	description.innerText = "Je rent naar hem toe en ontwijkt zijn aanvallen. Je probeert hem aan te vallen met je handen maar hij is te sterk. Je kan hem niet aan. Game over.";
 	button1.innerText = "Verder";
@@ -359,6 +398,7 @@ function fightHand(){
 
 function theEnd2(){
 	title.innerText = "Blue Dragon";
+	console.log(title);
 	title.style.color = "black";
 	description.style.color = "black";
 	document.body.style.backgroundImage = "url('images/dragonBlue.jpg')";
@@ -385,6 +425,7 @@ function theEnd2(){
 
 function fightSword2(){
 	title.innerText = "Victory";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/dragonBlue.jpg')";
 	description.innerText = "Je pakt je zwaard en rent op hem af, hij spuugt ijsballen maar je ontwijkt hem. Je springt op zijn rug en verslaat hem met je zwaard. Je hebt gewonnen van de draak. Er komen mensen vanuit het dorp aan rennen. Ze bedanken je voor het verslaan van de draak. The End."
 	button1.innerText = "Verder";
@@ -395,6 +436,7 @@ function fightSword2(){
 
 function fightAxe2(){
 	title.innerText = "Victory";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/dragonBlue.jpg')";
 	description.innerText = "Je pakt je bijl en rent op hem af, hij spuugt ijsballen maar je ontwijkt hem. Je springt op zijn rug en verslaat hem met je zwaard. Je hebt gewonnen van de draak. Er komen mensen vanuit het dorp aan rennen. Ze bedanken je voor het verslaan van de draak. The End."
 	button1.innerText = "Verder.";
@@ -405,6 +447,7 @@ function fightAxe2(){
 
 function theEnd(){
 	title.innerText = "Victory";
+	console.log(title);
 	document.body.style.backgroundImage = "url('images/theEnd.jpg')";
 	description.innerText = "Je hebt de draak verslagen en word opgehaald door een vliegtuig. Je kan weer naar huis.";
 	button1.style.display = "none";
