@@ -103,7 +103,7 @@ function weapons(){
 		button1.onclick = false;
 		button1.style.backgroundColor = "red";
 	}
-	
+	button2.innerText = "Bijl";
 	if (inventory.coins >= 10) {
 		button2.onclick = axe;
 	}
@@ -125,6 +125,8 @@ function sword(){
 	button1.innerText = "Verder";
 	button1.onclick = path2;
 	button2.style.display = "none";
+	button3.style.display = "none";
+
 }
 
 function axe(){
@@ -137,6 +139,8 @@ function axe(){
 	button1.innerText = "Verder";
 	button1.onclick = path2;
 	button2.style.display = "none";
+	button3.style.display = "none";
+
 }
 
 function wizard(){
@@ -260,6 +264,7 @@ function run(){
 function defeatMonster(){
 	title.innerText = "Victory";
 	console.log(title);
+	button1.style.backgroundColor = "white";
 	inventory.coins += 10;
 	description.innerText = "Je verslaat het monster";
 	button1.innerText = "Verder";
@@ -451,6 +456,8 @@ function theEnd(){
 	document.body.style.backgroundImage = "url('images/theEnd.jpg')";
 	description.innerText = "Je hebt de draak verslagen en word opgehaald door een vliegtuig. Je kan weer naar huis.";
 	button1.style.display = "none";
+	button2.style.display = "none";
+	button3.style.display = "none";
 }
 
 function displayButtons(){
